@@ -91,6 +91,31 @@
         margin-top: 30px;
         display: block;
       }
+      
+      .binarytranslate {
+        postion: relative;
+        display: inline-block;
+      }
+      
+      .binarytranslate .binarytranslate-text {
+        visibility: hidden;
+        width: 240px;
+        background-color: black;
+        color: white;
+        text-align: center;
+        border-style: solid;
+        border-color: white;
+        padding: 5px 10px;
+        position: absolute;
+        z-index: 1;
+        bottom: 50%;
+        left: 50%;
+        margin-left: -120px
+      }
+      .binarytranslate:hover .binarytranslatetext {
+        visibility: visible;
+      }
+      
     </style>
   </head>
 
@@ -162,6 +187,30 @@
         the new NCP team members. A few lines on your role/responsibilities and
         a bit of personal info will suffice. M&C will distribute internal comms
         via Slack, intranet, etc...
+      </section>
+      
+      <section>
+        <span class="entry-title">&#60;Received 0000-00-00_00:00:00&#62;</span
+        ><br />
+        <div class="binarytranslate"> 01001000 01101111 01110111 00100000 01101100 01101111 01101110 01100111
+        00100000 01101000 01100001 01110110 01100101 00100000 01001001 00100000
+        01100010 01100101 01100101 01101110 00100000 01101000 01100101 01110010 
+        01100101 00111111 00100000 01001001 00100000 01100011 01100001 01101110 
+        11100010 10000000 10011001 01110100 00100000 01110100 01100101 01101100 
+        01101100 00100000 01100001 01101110 01111001 01101101 01101111 01110010
+        01100101 00101110 00100000 01001000 01101111 01110111 00100000 01101101 
+        01110101 01100011 01101000 00100000 01101100 01101111 01101110 01100111 
+        01100101 01110010 00100000 01110111 01101001 01101100 01101100 00100000
+        01001001 00100000 01100010 01100101 00100000 01101000 01100101 01110010 
+        01100101 00111111 00100000 01001001 00100000 01100011 01100001 01101110 
+        11100010 10000000 10011001 01110100 00100000 01100111 01101111 00100000  
+        01101111 01101110 00101110 00100000 01001001 11100010 10000000 10011001 
+        01101100 01101100 00100000 01100111 01101111 00100000 01101111 01101110 
+        00101110 
+          <span class="binarytranslate-text">How long have I been here? 
+          I can’t tell anymore. How much longer will I be here? I can’t go on. 
+          I’ll go on.</span>
+        </div>
       </section>
     </template>
 
