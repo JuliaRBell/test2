@@ -18,6 +18,17 @@
         100% {
           transform: translateY(-5px);
         }
+      @keyframes flicker {
+        0% {opacity: 0;
+        }
+        50% {opacity: 1;
+        }
+        75% {opacity: 0;
+        }
+        100% {opacity: 1;
+        }
+      }
+        
       }
 
       body {
@@ -90,6 +101,13 @@
       .entry-text-wrapper {
         margin-top: 30px;
         display: block;
+      }
+        
+      .lightsflicker {
+        text-align: center;
+        animation-name:flicker;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
       }
       
       .binarytranslate {
@@ -183,11 +201,17 @@
       <section>
         <span class="entry-title">&#60;Received 0000-00-00_00:00:00&#62;</span
         ><br />
-        Hi team,<br />
-        With the recent restructure we want to take this opportunity to promote
-        the new NCP team members. A few lines on your role/responsibilities and
-        a bit of personal info will suffice. M&C will distribute internal comms
-        via Slack, intranet, etc...
+        <span class="flicker">
+        :-::::-:::.........................................................::-::::-:<br />
+::::-...:-:::::::::............................................:::::::::-:...-::::<br />
+:::-------::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-------:::<br />
+-------::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-------<br />
+          <br />
+          :-::::-..............................................................--:::-:<br />
+..::-...:-.........                                            .........-:...-::..<br />
+:::-=-----::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-----=-:::<br />
+:::::::..............................................................:::::::<br />
+        </span>
       </section>
       
       <section>
