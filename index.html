@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <style>
+      @keyframes float {
+        0% {
+          transform: translateY(5px);
+        }
+        100% {
+          transform: translateY(-5px);
+        }
+      }
+
+      body {
+        font-family: "Roboto Mono", monospace;
+        color: white;
+        background: black;
+        margin: 0;
+      }
+
+      .project-title-wrapper {
+        text-align: center;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        opacity: 1;
+        /* CHANGE "1s" TO THE TIME YOU WANT THE FADE OUT TO LAST */
+        /* YOU MUST ALSO CHANGE ONE LINE OF JAVASCRIPT I HAVE COMMENTED */
+        transition: opacity 1s ease;
+      }
+
+      .project-title-wrapper.hide {
+        opacity: 0;
+      }
+
+      .project-title-wrapper.hide + .scroll-box {
+        height: 100vh;
+      }
+
+      .name {
+        position: relative;
+        top: 80px;
+      }
+
+      .project-title {
+        text-align: center;
+        font-size: 16px;
+        animation-name: float;
+        /* YOU CAN FIDDLE WITH THESE TO ALTER THE "FLOATING ANIMATION */
+        /* https://developer.mozilla.org/en-US/docs/Web/CSS/animation */
+        animation-duration: 1.2s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+      }
+
+      .project-title pre {
+        margin: 0;
+      }
+
+      .entry-title {
+        color: gray;
+      }
+
+      .entries-container {
+        width: 800px;
+        padding: 0 20px;
+        margin: 0 auto;
+        padding-bottom: 50vh;
+      }
+
+      .scroll-box {
+        display: flex;
+        flex-direction: column-reverse;
+        overflow: auto;
+        height: 0px;
+      }
+
+      .entry-text-wrapper {
+        margin-top: 30px;
+        display: block;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="project-title-wrapper">
+      <div class="project-title">
+        <pre>
+▄▄▄█████▓ ██░ ██ ▓█████     ▄████▄   ▒█████   ███▄ ▄███▓ ███▄ ▄███▓ ▒█████   ███▄    █   ██████  </pre
+        >
+        <pre>
+▓  ██▒ ▓▒▓██░ ██▒▓█   ▀    ▒██▀ ▀█  ▒██▒  ██▒▓██▒▀█▀ ██▒▓██▒▀█▀ ██▒▒██▒  ██▒ ██ ▀█   █ ▒██    ▒ 
+</pre
+        >
+        <pre>
+▒ ▓██░ ▒░▒██▀▀██░▒███      ▒▓█    ▄ ▒██░  ██▒▓██    ▓██░▓██    ▓██░▒██░  ██▒▓██  ▀█ ██▒░ ▓██▄   
+</pre
+        >
+        <pre>
+░ ▓██▓ ░ ░▓█ ░██ ▒▓█  ▄    ▒▓▓▄ ▄██▒▒██   ██░▒██    ▒██ ▒██    ▒██ ▒██   ██░▓██▒  ▐▌██▒  ▒   ██▒
+</pre
+        >
+        <pre>
+  ▒██▒ ░ ░▓█▒░██▓░▒████▒   ▒ ▓███▀ ░░ ████▓▒░▒██▒   ░██▒▒██▒   ░██▒░ ████▓▒░▒██░   ▓██░▒██████▒▒</pre
+        >
+        <pre>
+  ▒ ░░    ▒ ░░▒░▒░░ ▒░ ░   ░ ░▒ ▒  ░░ ▒░▒░▒░ ░ ▒░   ░  ░░ ▒░   ░  ░░ ▒░▒░▒░ ░ ▒░   ▒ ▒ ▒ ▒▓▒ ▒ ░</pre
+        >
+        <pre>
+    ░     ▒ ░▒░ ░ ░ ░  ░     ░  ▒     ░ ▒ ▒░ ░  ░      ░░  ░      ░  ░ ▒ ▒░ ░ ░░   ░ ▒░░ ░▒  ░ ░</pre
+        >
+        <pre>
+  ░       ░  ░░ ░   ░      ░        ░ ░ ░ ▒  ░      ░   ░      ░   ░ ░ ░ ▒     ░   ░ ░ ░  ░  ░  </pre
+        >
+        <pre>
+         ░  ░  ░   ░  ░   ░ ░          ░ ░         ░          ░       ░ ░           ░       ░</pre
+        >
+      </div>
+      <div class="name">Julia Bellote</div>
+    </div>
+
+    <div class="scroll-box">
+      <div class="entries-container"></div>
+    </div>
+
+    <template id="entry-wrapper-template">
+      <div class="entry-text-wrapper">
+        <span class="entry-text"></span>
+      </div>
+    </template>
+
+    <template id="entries-template">
+      <section>
+        <span class="entry-title">&#60;Received 0000-00-00_00:00:00&#62;</span
+        ><br />
+        Daily Briefing Reminder. Make today count!<br />
+        09:00 - Weekly Standup <br />
+        09:30 - Numbers Boost update<br />
+        11:00 - Daily health break reminder<br />
+        13:00 - Reporting Showcase <br />
+        14:30 - User Acceptance Testing<br />
+        15:00 - Performance Review and Development Plan<br />
+      </section>
+
+      <section>
+        <span class="entry-title">&#60;Received 0000-00-00_00:00:00&#62;</span
+        ><br />
+        Hi team,<br />
+        With the recent restructure we want to take this opportunity to promote
+        the new NCP team members. A few lines on your role/responsibilities and
+        a bit of personal info will suffice. M&C will distribute internal comms
+        via Slack, intranet, etc...
+      </section>
+    </template>
+
+    <script>
+      //First we need to declare some variables
+      //the entry we are currently on, starting on 0. It will increment;
+      let entryCount = 0;
+      //true or false for if we are currently "typing" an entry
+      let playingTypingAnimation = false;
+      //are we showing the main title
+      let showingTitle = true;
+      //a variable for the previous entry
+      let lastEntry;
+
+      //all these document query selectors basically finds items in the document, so we can do stuff with them in code
+      //so we find the project title, the "." means we are searching for something with that class.
+      //so we find what has class="project-title-wrapper"
+      const projectTitle = document.querySelector(".project-title-wrapper");
+
+      //find every "section" inside our entries templates
+      const entries = document
+        .querySelector("#entries-template")
+        .content.querySelectorAll("section");
+
+      //"#" means id, so we find what has an id="entry-wrapper-template"
+      const entryWrapperTemplate = document.querySelector(
+        "#entry-wrapper-template"
+      );
+
+      const entriesContainer = document.querySelector(".entries-container");
+
+      //this is a function, basically it wont run this code until it's called by name
+      //this function is responsible for showing a new entry
+      const addNewEntry = () => {
+        //if we are already "typing out" an entry or if we have no more entries, then "return".
+        //Basically ending the function and doing nothing else
+        if (playingTypingAnimation || entryCount >= entries.length) return;
+        //remove the flashing cursor from the last "entry" (they otherwise each had their own)
+        if (lastEntry) lastEntry.cursor.style.display = "none";
+
+        //get the html inside the <section> for the entry we are up to
+        const entryItem = entries[entryCount].innerHTML;
+
+        //clone the entry wrapper template
+        const entryWrapper = entryWrapperTemplate.content
+          .querySelector(".entry-text-wrapper")
+          .cloneNode(true);
+
+        entryWrapper.querySelector(".entry-text").id = `entry${entryCount}`;
+
+        //insert our newly cloned wrapper into our entries so it can be seen;
+        entriesContainer.append(entryWrapper);
+
+        //since we are about to start the "typing", set to true
+        playingTypingAnimation = true;
+
+        //overwrite last entry with this entry, since next time we reference "lastEntry", it will be the last entry
+        //we are just using a 3rd party library here, so someone elses code, to do the "typing" animation
+        //i couldnt be fucked making it
+        lastEntry = new Typed(`#entry${entryCount}`, {
+          strings: [entryItem],
+          // CHANGE ME FOR A DIFFERENT SPEED
+          // lower seems to be faster?
+          typeSpeed: 25,
+          onComplete: (self) => {
+            //once the animation is done, mark it so
+            playingTypingAnimation = false;
+          },
+        });
+        // increment the entry count by one
+        entryCount = entryCount + 1;
+      };
+
+      //another function. This one will only run once when we need to hide the title "the commons"
+      const hideTitle = () => {
+        //add a class called hide to the title
+        //this will allow to CSS to start the hiding transition
+        projectTitle.classList.add("hide");
+        //this is like a countdown timer, after the time (1000ms) we run code.
+        //this is the amount of time the hiding animation works for, so we want to run code after the animation is complete
+        setTimeout(() => {
+          //animation done, so the title is no longer showing
+          showingTitle = false;
+          //we just set the opacity to 0 in the animation, now we need to properly remove it
+          projectTitle.style.display = "none";
+          //begin adding a new entry
+          addNewEntry();
+          // IF YOU WANT TO CHANGE THE HIDING ANIMATION YOU ALSO NEED TO CHANGE THIS. THIS IS IN MS
+        }, 1000);
+      };
+
+      // we find the <body> tag (so everything), and "listen" for a click.
+      //When anywhere is clicked, we either hide the title (if it's showing) or add another entry
+      document.querySelector("body").addEventListener("click", () => {
+        if (showingTitle) hideTitle();
+        else addNewEntry();
+      });
+    </script>
+  </body>
+</html>
