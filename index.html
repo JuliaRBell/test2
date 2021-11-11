@@ -18,16 +18,24 @@
         100% {
           transform: translateY(-5px);
         }
-        
+      }
+
       @keyframes flash {
-        0% {
+        50% {
           opacity: 0;
         }
-        100% {
-          opacity: 1;
-        }
       }
-        
+
+      @keyframes replace {
+        0% {
+          content: "@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a#########################:      #########################:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@: ";
+        }
+        50% {
+          content: "       :-++****++-:                   .-=+****+=-:\a   .-+@@@@*=-::-=+#@#=.             =*@%*=----+*@@@@*-.\a   -#@@*:  .+##+   :-*#-          :##=:   .=+=.  :*@@#-\a  -%@@= .  %@@@@%   . .**:      .+#: .   -@@@@@.  . -%@@=\a  :=%: .   =@@@@=   .   .-      =-   .   :@@@@@.  . :%=.\a    .#+ .    ..    .                  .    -=-   ..+#.\a      :*+-.       ....               ....      .-+*:\a         :==---:::.                    .:::----=-";
+        }
+        100% {
+          content: "@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a#########################:      #########################:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@: ";
+        }
       }
 
       body {
@@ -47,7 +55,7 @@
         opacity: 1;
         /* CHANGE "1s" TO THE TIME YOU WANT THE FADE OUT TO LAST */
         /* YOU MUST ALSO CHANGE ONE LINE OF JAVASCRIPT I HAVE COMMENTED */
-        transition: opacity 1s ease;
+        transition: opacity 2s ease;
       }
 
       .project-title-wrapper.hide {
@@ -101,22 +109,37 @@
         margin-top: 30px;
         display: block;
       }
-        
+
       .lights {
         animation-name: flash;
         animation-duration: 1s;
         animation-timing-function: linear;
         animation-iteration-count: infinite;
-      }
-    
-      .binarytranslate {
-        postion: relative;
         display: inline-block;
+        white-space: pre;
+        line-height: 1.1;
+        position: relative;
+        font-size: 9pt;
       }
-      
+
+      .eyes::before {
+        content: "@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@:\a#########################:      #########################:\a@@@@@@@@@@@@@@@@@@@@@@@@@-      @@@@@@@@@@@@@@@@@@@@@@@@@: ";
+        animation-name: replace;
+        animation-duration: 5s;
+        animation-timing-function: linear;
+        animation-iteration-count: infinite;
+        white-space: pre;
+        color:darkturquoise;
+      }
+
+      .binarytranslate {
+        position: relative;
+        display: inline;
+      }
+
       .binarytranslate .binarytranslate-text {
         visibility: hidden;
-        width: 240px;
+        width: 300px;
         background-color: black;
         color: white;
         text-align: center;
@@ -128,68 +151,33 @@
         z-index: 1;
         bottom: 50%;
         left: 50%;
-        margin-left: -120px
+        margin-left: 0px
       }
+
       .binarytranslate:hover .binarytranslate-text {
         visibility: visible;
       }
-      .eyes::before {
-        content: "
- <pre>@@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- #########################:       #########################:</pre>";
-        animation-name: animate;
-        animation-duration: 2s;
-        animation-timing-function: linear;
-        animation-iteration-count: infinite;
-      }
-      
-      @keyframes animate {
-            0% {
-                content: "
- <pre>@@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- #########################:       #########################:</pre>";
-            }
-            50% {
-                content: "
- <pre>          :-++****++-:                  .-=+****+=-:         
-     .-+@@@@*=-::-=+#@#=.           =*@%*=----+*@@@@*-.     
-     -#@@*:  .+##+   :-*#-        :##=:   .=+=.  :*@@#-     
-   -%@@= .   %@@@@%   . .**:    .+#: .   -@@@@@.  . -%@@=   
-    :=%: .   =@@@@=   .   .-    =-   .   :@@@@@.  . :%=.    
-      .#+ .    ..    .                .    -=-   ..+#.      
-        :*+-.       ....             ....      .-+*:        
-           :==---:::.                  .:::----=-   </pre>";
-            }
-            100% {
-                content: " 
- <pre>@@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- @@@@@@@@@@@@@@@@@@@@@@@@@-       @@@@@@@@@@@@@@@@@@@@@@@@@:     
- #########################:       #########################:</pre>";
-            }
-        }
+  
+        .refresh-button {
+        background-color: black;
+        border: none;
+        color: white;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        padding-left: 0px;
+        padding-right: 12px;
+        text-align: left;
+        font-family: "Roboto Mono", monospace;
+        font-size: 16px;
+        display:inline-block;
+        margin: 0 auto;
+        cursor: pointer;}
 
-      
     </style>
   </head>
 
   <body>
+    <audio id="audio" src="AmbientComputerMedley.mp3" autoplay loop></audio>
     <div class="project-title-wrapper">
       <div class="project-title">
         <pre>
@@ -220,10 +208,10 @@
   ░       ░  ░░ ░   ░      ░        ░ ░ ░ ▒  ░      ░   ░      ░   ░ ░ ░ ▒     ░   ░ ░ ░  ░  ░  </pre
         >
         <pre>
-         ░  ░  ░   ░  ░   ░ ░          ░ ░         ░          ░       ░ ░           ░       ░</pre
+        ░  ░  ░   ░  ░   ░ ░          ░ ░         ░          ░       ░ ░           ░       ░</pre
         >
       </div>
-      <div class="name">Julia Bellote</div>
+      <div class="name">Julia Rae Bellote</div>
     </div>
 
     <div class="scroll-box">
@@ -238,57 +226,90 @@
 
     <template id="entries-template">
       <section>
-        <span class="entry-title">&#60;Received 0000-00-00_00:00:00&#62;</span
-        ><br />
+        <span class="entry-title">&#60;Received 0000-00-00_00:00:00&#62;</span>
+        <br />
         Daily Briefing Reminder. Make today count!<br />
         09:00 - Weekly Standup <br />
-        09:30 - Numbers Boost update<br />
-        11:00 - Daily health break reminder<br />
-        13:00 - Reporting Showcase <br />
-        14:30 - User Acceptance Testing<br />
-        15:00 - Performance Review and Development Plan<br />
+        09:30 – NumbersBoost update<br />
+11:00 – Daily health break reminder<br />
+13:00 – Reporting Showcase<br />
+14:30 – User Acceptance Testing<br />
+15:00 – Performance Review and Development Plan<br />
       </section>
-      
+
       <section>
-        hi
-        <span class="eyes"> </span>
-      </secition>
+        <span class="entry-title">&#60;Received 2022-11-01_12:00:10&#62;</span>
+        <br />
+        [My bio looks like a sad dating profile. Note to self, remove &#60;&#60;I like long walks on the beach&#62;&#62;.]
+      </section>
+
+      <section>
+        <span class="entry-title">&#60;Received 2022-11-01_12:00:10&#62;</span>
+        <br />
+        [Must figure out how to break the news that the project delivery date will need to be extended.]
+      </section> 
+
+      <section>
+        <span class="entry-title">&#60;Received 0000-00-00_00:00:00&#62;</span>
+        <br />
+        Hi all,<br />
+I am pleased to announce that Claudia Harris has been appointed as our new PAC Business Partner. 
+Claudia started with us yesterday, so we are quickly bringing her up to speed and no doubt you will connect
+ with her at some stage. Her expertise lies in HR and payroll administration, and continuous improvement processes for organisational outcomes.<br /> 
+Please join me in welcoming Claudia to the team.
+
+        </section>
+
+
 
       <section>
         <span class="entry-title">&#60;Received 0000-00-00_00:00:00&#62;</span
-        ><br />
-        <span class="lights">
-          <pre>
+        ><br /><br />
+        <span class="lights">   :-::::-:::.........................................................::-::::-:
+::::-...:-:::::::::............................................:::::::::-:...-::::
+:::-------::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-------:::
+   -------::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-------
+   <br />       
    :-::::-..............................................................--:::-:
 ..::-...:-.........                                            .........-:...-::..
 :::-=-----::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::-----=-:::
-   :::::::..............................................................:::::::</pre>
-        </span>
+   :::::::..............................................................:::::::
+        </span> 
       </section>
-      
+
+      <section>
+        <span class="entry-title">&#60;Received 0000-00-00_00:00:00&#62;</span><br />
+          <br />
+        <span class="eyes"></span></section>
+
       <section>
         <span class="entry-title">&#60;Received 0000-00-00_00:00:00&#62;</span
-        ><br />
+         ><br />
         <span class="binarytranslate"> 01001000 01101111 01110111 00100000 01101100 01101111 01101110 01100111
-        00100000 01101000 01100001 01110110 01100101 00100000 01001001 00100000
-        01100010 01100101 01100101 01101110 00100000 01101000 01100101 01110010 
-        01100101 00111111 00100000 01001001 00100000 01100011 01100001 01101110 
-        11100010 10000000 10011001 01110100 00100000 01110100 01100101 01101100 
-        01101100 00100000 01100001 01101110 01111001 01101101 01101111 01110010
-        01100101 00101110 00100000 01001000 01101111 01110111 00100000 01101101 
-        01110101 01100011 01101000 00100000 01101100 01101111 01101110 01100111 
-        01100101 01110010 00100000 01110111 01101001 01101100 01101100 00100000
-        01001001 00100000 01100010 01100101 00100000 01101000 01100101 01110010 
-        01100101 00111111 00100000 01001001 00100000 01100011 01100001 01101110 
-        11100010 10000000 10011001 01110100 00100000 01100111 01101111 00100000  
-        01101111 01101110 00101110 00100000 01001001 11100010 10000000 10011001 
-        01101100 01101100 00100000 01100111 01101111 00100000 01101111 01101110 
-        00101110
-          <span class="binarytranslate-text">How long have I been here? 
+          00100000 01101000 01100001 01110110 01100101 00100000 01001001 00100000
+          01100010 01100101 01100101 01101110 00100000 01101000 01100101 01110010
+          01100101 00111111 00100000 01001001 00100000 01100011 01100001 01101110
+          11100010 10000000 10011001 01110100 00100000 01110100 01100101 01101100
+          01101100 00100000 01100001 01101110 01111001 01101101 01101111 01110010
+          01100101 00101110 00100000 01001000 01101111 01110111 00100000 01101101 
+          01110101 01100011 01101000 00100000 01101100 01101111 01101110 01100111 
+          01100101 01110010 00100000 01110111 01101001 01101100 01101100 00100000
+          01001001 00100000 01100010 01100101 00100000 01101000 01100101 01110010 
+          01100101 00111111 00100000 01001001 00100000 01100011 01100001 01101110 
+          11100010 10000000 10011001 01110100 00100000 01100111 01101111 00100000  
+          01101111 01101110 00101110 00100000 01001001 11100010 10000000 10011001 
+          01101100 01101100 00100000 01100111 01101111 00100000 01101111 01101110 
+          00101110
+         <span class="binarytranslate-text">How long have I been here? 
           I can’t tell anymore. How much longer will I be here? I can’t go on. 
           I’ll go on.</span>
         </span>
+        </section>
+
+      <section>
+        <button onClick="window.location.reload();" class="refresh-button">[abort]</button>
       </section>
+
     </template>
 
     <script>
@@ -351,7 +372,7 @@
           strings: [entryItem],
           // CHANGE ME FOR A DIFFERENT SPEED
           // lower seems to be faster?
-          typeSpeed: 25,
+          typeSpeed: 15,
           onComplete: (self) => {
             //once the animation is done, mark it so
             playingTypingAnimation = false;
@@ -359,6 +380,8 @@
         });
         // increment the entry count by one
         entryCount = entryCount + 1;
+
+        const audio=document.getElementById("audio");audio.play();
       };
 
       //another function. This one will only run once when we need to hide the title "the commons"
@@ -376,7 +399,7 @@
           //begin adding a new entry
           addNewEntry();
           // IF YOU WANT TO CHANGE THE HIDING ANIMATION YOU ALSO NEED TO CHANGE THIS. THIS IS IN MS
-        }, 1000);
+        }, 2000);
       };
 
       // we find the <body> tag (so everything), and "listen" for a click.
@@ -388,3 +411,4 @@
     </script>
   </body>
 </html>
+
