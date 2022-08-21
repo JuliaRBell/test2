@@ -107,13 +107,6 @@
 
       .entry-text-wrapper {
         margin-top: 30px;
-        margin-right:300px;
-        display: block;
-      }
-      
-      .received-text-wrapper {
-        margin-top: 30px;
-        margin-left:300px;
         display: block;
       }
       
@@ -241,16 +234,10 @@
         <span class="entry-text"></span>
       </div>
     </template>
-    
-     <template id="received-wrapper-template">
-      <div class="received-text-wrapper">
-        <span class="received-text"></span>
-      </div>
-    </template>
 
     <template id="entries-template">
       <section>
-        <span class="recevied-text-wrapper"> Received 0000-00-00_00:00:00
+        <span class="recevied-margin"> Received 0000-00-00_00:00:00
         <br />
         Daily Briefing Reminder. Make today count!<br />
         09:00 - Weekly Standup <br />
@@ -259,27 +246,27 @@
       </section>
 
       <section>
-        <span class="received-text-wrapper"> Entry 2022-11-01_12:00:10&
+        <span class="entry-margin"> Entry 2022-11-01_12:00:10&
         <br />
         [My bio looks like a sad dating profile. Note to self, remove &#60;&#60;I like long walks on the beach&#62;&#62;.]
         </span>
       </section>
 
       <section>
-        <span class="entry-title">&#60;Received 2022-11-01_12:00:10&#62;</span>
+        <span class="entry-margin">&#60;Received 2022-11-01_12:00:10&#62;
         <br />
-        [Must figure out how to break the news that the project delivery date will need to be extended.]
+        [Must figure out how to break the news that the project delivery date will need to be extended.]</span>
       </section> 
 
       <section>
-        <span class="entry-title">&#60;Received 0000-00-00_00:00:00&#62;</span>
+        <span class="received-margin">&#60;Received 0000-00-00_00:00:00&#62;
         <br />
         Hi all,<br />
 I am pleased to announce that Claudia Harris has been appointed as our new PAC Business Partner. 
 Claudia started with us yesterday, so we are quickly bringing her up to speed and no doubt you will connect
  with her at some stage. Her expertise lies in HR and payroll administration, and continuous improvement processes for organisational outcomes.<br /> 
 Please join me in welcoming Claudia to the team.
-
+</span>
         </section>
 
 
@@ -360,9 +347,6 @@ Please join me in welcoming Claudia to the team.
         "#entry-wrapper-template"
       );
       
-      const entryWrapperTemplate = document.querySelector(
-        "#received-wrapper-template"
-      );
 
       const entriesContainer = document.querySelector(".entries-container");
 
@@ -384,13 +368,6 @@ Please join me in welcoming Claudia to the team.
           .cloneNode(true);
 
         entryWrapper.querySelector(".entry-text").id = `entry${entryCount}`;
-        
-        //clone the entry wrapper template
-        const entryWrapper = entryWrapperTemplate.content
-          .querySelector(".received-text-wrapper")
-          .cloneNode(true);
-
-        entryWrapper.querySelector(".received-text").id = `entry${entryCount}`;
 
         //insert our newly cloned wrapper into our entries so it can be seen;
         entriesContainer.append(entryWrapper);
