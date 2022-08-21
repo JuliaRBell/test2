@@ -241,10 +241,16 @@
         <span class="entry-text"></span>
       </div>
     </template>
+    
+     <template id="received-wrapper-template">
+      <div class="received-text-wrapper">
+        <span class="received-text"></span>
+      </div>
+    </template>
 
     <template id="entries-template">
       <section>
-        <span class="recevied-margin"> Received 0000-00-00_00:00:00
+        <span class="recevied-text-wrapper"> Received 0000-00-00_00:00:00
         <br />
         Daily Briefing Reminder. Make today count!<br />
         09:00 - Weekly Standup <br />
@@ -253,7 +259,7 @@
       </section>
 
       <section>
-        <span class="entry-margin"> Entry 2022-11-01_12:00:10&
+        <span class="received-text-wrapper"> Entry 2022-11-01_12:00:10&
         <br />
         [My bio looks like a sad dating profile. Note to self, remove &#60;&#60;I like long walks on the beach&#62;&#62;.]
         </span>
@@ -353,6 +359,10 @@ Please join me in welcoming Claudia to the team.
       const entryWrapperTemplate = document.querySelector(
         "#entry-wrapper-template"
       );
+      
+      const entryWrapperTemplate = document.querySelector(
+        "#received-wrapper-template"
+      );
 
       const entriesContainer = document.querySelector(".entries-container");
 
@@ -374,6 +384,13 @@ Please join me in welcoming Claudia to the team.
           .cloneNode(true);
 
         entryWrapper.querySelector(".entry-text").id = `entry${entryCount}`;
+        
+        //clone the entry wrapper template
+        const entryWrapper = entryWrapperTemplate.content
+          .querySelector(".received-text-wrapper")
+          .cloneNode(true);
+
+        entryWrapper.querySelector(".received-text").id = `entry${entryCount}`;
 
         //insert our newly cloned wrapper into our entries so it can be seen;
         entriesContainer.append(entryWrapper);
