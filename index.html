@@ -111,6 +111,12 @@
         display: block;
       }
       
+      .received-text-wrapper {
+        margin-top: 30px;
+        margin-left:300px;
+        display: block;
+      }
+      
       .entry-margin {
         margin-right:300px;
         display: block;
@@ -223,7 +229,7 @@
         ░  ░  ░   ░  ░   ░ ░          ░ ░         ░          ░       ░ ░           ░       ░</pre
         >
       </div>
-      <div class="name">Julia Rae Bellote</div>
+      <div class="name">Julia Bellote</div>
     </div>
 
     <div class="scroll-box">
@@ -247,9 +253,10 @@
       </section>
 
       <section>
-        Entry 2022-11-01_12:00:10&
+        <span class="entry-margin"> Entry 2022-11-01_12:00:10&
         <br />
         [My bio looks like a sad dating profile. Note to self, remove &#60;&#60;I like long walks on the beach&#62;&#62;.]
+        </span>
       </section>
 
       <section>
@@ -358,7 +365,7 @@ Please join me in welcoming Claudia to the team.
         //remove the flashing cursor from the last "entry" (they otherwise each had their own)
         if (lastEntry) lastEntry.cursor.style.display = "none";
 
-        //get the html inside the <section> for the entry we are up to
+        //get the html inside the <sectFion> for the entry we are up to
         const entryItem = entries[entryCount].innerHTML;
 
         //clone the entry wrapper template
