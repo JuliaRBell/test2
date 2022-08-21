@@ -88,7 +88,7 @@
       }
 
       .entry-title {
-        color: gray;
+        color: green;
       }
 
       .entries-container {
@@ -107,8 +107,15 @@
 
       .entry-text-wrapper {
         margin-top: 30px;
-        margin-left: 400px;
         display: block;
+      }
+      
+      .entry-margin {
+        margin-right:300px;
+      }
+      
+       .recevied-margin {
+        margin-left:300px;
       }
 
       .lights {
@@ -227,7 +234,7 @@
 
     <template id="entries-template">
       <section>
-        <span class="entry-title">&#60;Received 0000-00-00_00:00:00&#62;</span>
+        <span class="recevied-margin">&#60;Received 0000-00-00_00:00:00&#62;
         <br />
         Daily Briefing Reminder. Make today count!<br />
         09:00 - Weekly Standup <br />
@@ -236,12 +243,14 @@
 13:00 – Reporting Showcase<br />
 14:30 – User Acceptance Testing<br />
 15:00 – Performance Review and Development Plan<br />
+        </span>
       </section>
 
       <section>
-        <span class="entry-title">&#60;Received 2022-11-01_12:00:10&#62;</span>
+        <span class="entry-margin">&#60;Entry 2022-11-01_12:00:10&#62;
         <br />
         [My bio looks like a sad dating profile. Note to self, remove &#60;&#60;I like long walks on the beach&#62;&#62;.]
+        </span> 
       </section>
 
       <section>
